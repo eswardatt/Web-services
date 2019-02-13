@@ -1,0 +1,74 @@
+﻿@model emails.Models.TEMPLATE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TEMPLATE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_TEMPLATENAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_TEMPLATENAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_SROURCECODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_SROURCECODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_CREATEDBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_CREATEDBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_CREATEDDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_CREATEDDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_UPDATEDBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_UPDATEDBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_UPDATEDDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_UPDATEDDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TMP_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TMP_STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TMP_SNO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

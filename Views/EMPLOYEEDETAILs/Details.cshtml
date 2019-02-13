@@ -1,0 +1,82 @@
+﻿@model emails.Models.EMPLOYEEDETAIL
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPLOYEEDETAIL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_EMPLOYEENAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_EMPLOYEENAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_EMPLOYEEEMAILID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_EMPLOYEEEMAILID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_EMPLOYEEPHONENUMBER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_EMPLOYEEPHONENUMBER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_CREATEDBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_CREATEDBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_CREATEDDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_CREATEDDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_UPDATEDDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_UPDATEDDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMP_UPDATEDBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMP_UPDATEDBY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EMP_EMPLOYEEID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

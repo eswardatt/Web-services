@@ -1,0 +1,69 @@
+﻿@model IEnumerable<emails.Models.TEMPLATE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_TEMPLATENAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_SROURCECODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_CREATEDBY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_CREATEDDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_UPDATEDBY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_UPDATEDDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TMP_STATUS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_TEMPLATENAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_SROURCECODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_CREATEDBY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_CREATEDDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_UPDATEDBY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_UPDATEDDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TMP_STATUS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TMP_SNO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TMP_SNO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TMP_SNO })
+        </td>
+    </tr>
+}
+
+</table>

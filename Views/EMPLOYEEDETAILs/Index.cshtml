@@ -1,0 +1,55 @@
+﻿@model IEnumerable<emails.Models.ASP_BIND_EMPLOYEEDETAILS_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "../Register/InsertRegister")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           
+           @Html.Label("Name")
+        </th>
+        <th>
+            
+            @Html.Label("E-mail")
+        </th>
+        <th>
+           
+            @Html.Label("Mobile")
+        </th>
+        <th>
+            @Html.Label("Actions")
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_EMPLOYEENAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_EMPLOYEEEMAILID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMP_EMPLOYEEPHONENUMBER)
+        </td>
+        
+        <td>
+            
+            @Html.ActionLink("Edit", "Edit", new { id = item.EMP_EMPLOYEEID },new{ @class = "btn btn-success" }) |
+           
+            @*@Html.ActionLink("Details", "Details", new { id=item.EMP_EMPLOYEEID }, new { @class="btn btn-success"}) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.EMP_EMPLOYEEID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

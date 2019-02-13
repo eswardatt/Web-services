@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EMAILTEMPLATESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EMPLOYEEDETAILS">
+          <Key>
+            <PropertyRef Name="EMP_EMPLOYEEID" />
+          </Key>
+          <Property Name="EMP_EMPLOYEEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMP_EMPLOYEENAME" Type="nvarchar(max)" />
+          <Property Name="EMP_EMPLOYEEEMAILID" Type="nvarchar(max)" />
+          <Property Name="EMP_EMPLOYEEPHONENUMBER" Type="nvarchar(max)" />
+          <Property Name="EMP_CREATEDBY" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EMP_CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="EMP_UPDATEDDATE" Type="date" Nullable="false" />
+          <Property Name="EMP_STATUS" Type="int" Nullable="false" />
+          <Property Name="EMP_UPDATEDBY" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TEMPLATES">
+          <Key>
+            <PropertyRef Name="TMP_SNO" />
+          </Key>
+          <Property Name="TMP_SNO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TMP_TEMPLATENAME" Type="nvarchar(max)" />
+          <Property Name="TMP_SROURCECODE" Type="nvarchar(max)" />
+          <Property Name="TMP_CREATEDBY" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TMP_CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="TMP_UPDATEDBY" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TMP_UPDATEDDATE" Type="date" Nullable="false" />
+          <Property Name="TMP_STATUS" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="ASP_BIND_EMPLOYEEDETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ASP_DELETE_EMPLOYEE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EMP_EMPLOYEEID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ASP_INSERT_EMPLOYEEE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EMP_EMPLOYEENAME" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="EMP_EMPLOYEEEMAILID" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="EMP_EMPLOYEEPHONENUMBER" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="ASP_UPDATE_EMPLOYEE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EMP_EMPLOYEEID" Type="int" Mode="In" />
+          <Parameter Name="EMP_EMPLOYEENAME" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="EMP_EMPLOYEEEMAILID" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="EMP_EMPLOYEEPHONENUMBER" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="EMP_UPDATEDBY" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="EMAILTEMPLATESModelStoreContainer">
+          <EntitySet Name="EMPLOYEEDETAILS" EntityType="Self.EMPLOYEEDETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEMPLATES" EntityType="Self.TEMPLATES" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EMAILTEMPLATESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EMPLOYEEDETAIL">
+          <Key>
+            <PropertyRef Name="EMP_EMPLOYEEID" />
+          </Key>
+          <Property Name="EMP_EMPLOYEEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMP_EMPLOYEENAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_EMPLOYEEEMAILID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_EMPLOYEEPHONENUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EMP_CREATEDBY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMP_CREATEDDATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EMP_UPDATEDDATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EMP_STATUS" Type="Int32" Nullable="false" />
+          <Property Name="EMP_UPDATEDBY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EMAILTEMPLATESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EMPLOYEEDETAILS" EntityType="Self.EMPLOYEEDETAIL" />
+          <EntitySet Name="TEMPLATES" EntityType="EMAILTEMPLATESModel.TEMPLATE" />
+          <FunctionImport Name="ASP_INSERT_EMPLOYEEE">
+            <Parameter Name="EMP_EMPLOYEENAME" Mode="In" Type="String" />
+            <Parameter Name="EMP_EMPLOYEEEMAILID" Mode="In" Type="String" />
+            <Parameter Name="EMP_EMPLOYEEPHONENUMBER" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ASP_UPDATE_EMPLOYEE">
+            <Parameter Name="EMP_EMPLOYEEID" Mode="In" Type="Int32" />
+            <Parameter Name="EMP_EMPLOYEENAME" Mode="In" Type="String" />
+            <Parameter Name="EMP_EMPLOYEEEMAILID" Mode="In" Type="String" />
+            <Parameter Name="EMP_EMPLOYEEPHONENUMBER" Mode="In" Type="String" />
+            <Parameter Name="EMP_UPDATEDBY" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ASP_DELETE_EMPLOYEE">
+          <Parameter Name="EMP_EMPLOYEEID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ASP_BIND_EMPLOYEEDETAILS" ReturnType="Collection(EMAILTEMPLATESModel.ASP_BIND_EMPLOYEEDETAILS_Result)" />
+        </EntityContainer>
+        <EntityType Name="TEMPLATE">
+          <Key>
+            <PropertyRef Name="TMP_SNO" />
+          </Key>
+          <Property Name="TMP_SNO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TMP_TEMPLATENAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TMP_SROURCECODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TMP_CREATEDBY" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TMP_CREATEDDATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TMP_UPDATEDBY" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TMP_UPDATEDDATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TMP_STATUS" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="ASP_BIND_EMPLOYEEDETAILS_Result">
+          <Property Type="Int32" Name="EMP_EMPLOYEEID" Nullable="false" />
+          <Property Type="String" Name="EMP_EMPLOYEENAME" Nullable="true" />
+          <Property Type="String" Name="EMP_EMPLOYEEEMAILID" Nullable="true" />
+          <Property Type="String" Name="EMP_EMPLOYEEPHONENUMBER" Nullable="true" />
+          <Property Type="String" Name="EMP_CREATEDBY" Nullable="false" />
+          <Property Type="DateTime" Name="EMP_CREATEDDATE" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EMAILTEMPLATESModelStoreContainer" CdmEntityContainer="EMAILTEMPLATESEntities">
+          <EntitySetMapping Name="EMPLOYEEDETAILS">
+            <EntityTypeMapping TypeName="EMAILTEMPLATESModel.EMPLOYEEDETAIL">
+              <MappingFragment StoreEntitySet="EMPLOYEEDETAILS">
+                <ScalarProperty Name="EMP_EMPLOYEEID" ColumnName="EMP_EMPLOYEEID" />
+                <ScalarProperty Name="EMP_EMPLOYEENAME" ColumnName="EMP_EMPLOYEENAME" />
+                <ScalarProperty Name="EMP_EMPLOYEEEMAILID" ColumnName="EMP_EMPLOYEEEMAILID" />
+                <ScalarProperty Name="EMP_EMPLOYEEPHONENUMBER" ColumnName="EMP_EMPLOYEEPHONENUMBER" />
+                <ScalarProperty Name="EMP_CREATEDBY" ColumnName="EMP_CREATEDBY" />
+                <ScalarProperty Name="EMP_CREATEDDATE" ColumnName="EMP_CREATEDDATE" />
+                <ScalarProperty Name="EMP_UPDATEDDATE" ColumnName="EMP_UPDATEDDATE" />
+                <ScalarProperty Name="EMP_STATUS" ColumnName="EMP_STATUS" />
+                <ScalarProperty Name="EMP_UPDATEDBY" ColumnName="EMP_UPDATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEMPLATES">
+            <EntityTypeMapping TypeName="EMAILTEMPLATESModel.TEMPLATE">
+              <MappingFragment StoreEntitySet="TEMPLATES">
+                <ScalarProperty Name="TMP_STATUS" ColumnName="TMP_STATUS" />
+                <ScalarProperty Name="TMP_UPDATEDDATE" ColumnName="TMP_UPDATEDDATE" />
+                <ScalarProperty Name="TMP_UPDATEDBY" ColumnName="TMP_UPDATEDBY" />
+                <ScalarProperty Name="TMP_CREATEDDATE" ColumnName="TMP_CREATEDDATE" />
+                <ScalarProperty Name="TMP_CREATEDBY" ColumnName="TMP_CREATEDBY" />
+                <ScalarProperty Name="TMP_SROURCECODE" ColumnName="TMP_SROURCECODE" />
+                <ScalarProperty Name="TMP_TEMPLATENAME" ColumnName="TMP_TEMPLATENAME" />
+                <ScalarProperty Name="TMP_SNO" ColumnName="TMP_SNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ASP_INSERT_EMPLOYEEE" FunctionName="EMAILTEMPLATESModel.Store.ASP_INSERT_EMPLOYEEE" />
+          <FunctionImportMapping FunctionImportName="ASP_UPDATE_EMPLOYEE" FunctionName="EMAILTEMPLATESModel.Store.ASP_UPDATE_EMPLOYEE" />
+          <FunctionImportMapping FunctionImportName="ASP_DELETE_EMPLOYEE" FunctionName="EMAILTEMPLATESModel.Store.ASP_DELETE_EMPLOYEE" />
+          <FunctionImportMapping FunctionImportName="ASP_BIND_EMPLOYEEDETAILS" FunctionName="EMAILTEMPLATESModel.Store.ASP_BIND_EMPLOYEEDETAILS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EMAILTEMPLATESModel.ASP_BIND_EMPLOYEEDETAILS_Result">
+                <ScalarProperty Name="EMP_EMPLOYEEID" ColumnName="EMP_EMPLOYEEID" />
+                <ScalarProperty Name="EMP_EMPLOYEENAME" ColumnName="EMP_EMPLOYEENAME" />
+                <ScalarProperty Name="EMP_EMPLOYEEEMAILID" ColumnName="EMP_EMPLOYEEEMAILID" />
+                <ScalarProperty Name="EMP_EMPLOYEEPHONENUMBER" ColumnName="EMP_EMPLOYEEPHONENUMBER" />
+                <ScalarProperty Name="EMP_CREATEDBY" ColumnName="EMP_CREATEDBY" />
+                <ScalarProperty Name="EMP_CREATEDDATE" ColumnName="EMP_CREATEDDATE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
